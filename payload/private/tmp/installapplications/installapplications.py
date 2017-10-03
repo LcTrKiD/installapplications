@@ -248,7 +248,7 @@ def main():
 
     # DEPNotify trigger commands that need to happen at the end of a run
     deptriggers = ['Command: Quit', 'Command: Restart', 'Command: Logout',
-                   'DEPNotifyPath']
+                   'OpenDEPNotify']
 
     # Look for all the DEPNotify options but skip the ones that are usual
     # done after a full run.
@@ -389,12 +389,12 @@ def main():
                             if opts.depnotify:
                                 for varg in opts.depnotify:
                                     depnstr = str(varg)
-                                    if 'OpenDEPNofity' in depnstr:
+                                    if 'OpenDEPNotify' in depnstr:
                                         launchctl('/bin/launchctl',
                                                   'asuser',        
                                                   str(getconsoleuser_uid()),
                                                   '/bin/launchctl', 'load',
-                                                  iaslapath)
+                                                  ialapath)
                                     else:
                                         continue
                         iaslog('Installing %s from %s' % (name, path))
